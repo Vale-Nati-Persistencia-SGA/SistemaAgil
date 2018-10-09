@@ -45,6 +45,12 @@ public class AbstractHome<T> implements Home<T> {
 		this.getSession().delete(object);
 	}
 
+	@Override
+	public T findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 
 }
