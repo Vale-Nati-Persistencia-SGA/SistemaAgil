@@ -7,7 +7,6 @@ import org.springframework.core.GenericTypeResolver;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.edu.unq.sarmiento.epers.home.AbstractHome;
 
 @Repository
 @Transactional
@@ -26,12 +25,10 @@ public class AbstractHome<T> implements Home<T> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T findByName(String name) {
+	public T find(Integer id) {
 		Class<T> genericType = (Class<T>) GenericTypeResolver.resolveTypeArgument(getClass(), AbstractHome.class);
 		return getSession().get(genericType, id);
-
 	}
-
 	@Override
 	public void insert(T object) {
 		this.getSession().save(object);
@@ -47,5 +44,7 @@ public class AbstractHome<T> implements Home<T> {
 	public void delete(T object) {
 		this.getSession().delete(object);
 	}
+
+	
 
 }
