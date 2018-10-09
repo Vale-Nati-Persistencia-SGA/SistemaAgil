@@ -51,6 +51,12 @@ public class AbstractHome<T> implements Home<T> {
 		return null;
 	}
 
+	@Override
+	public void saveOrUpdate(T object) {
+		 this.getSession().saveOrUpdate(object);
+		
+	}
+
 
 	
 

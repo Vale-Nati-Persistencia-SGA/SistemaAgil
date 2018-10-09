@@ -63,6 +63,7 @@ public class HomePage extends WebPage {
 			}
 			
 		});
+		log.debug("form construido");
 
 	}
 }

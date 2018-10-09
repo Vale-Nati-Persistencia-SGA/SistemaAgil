@@ -12,6 +12,7 @@ import org.hibernate.Session;
 		public void delete(T object);
 		public T find(Integer id);
 		public Session getSession();
+		public void saveOrUpdate(T object);
 
 	}
 
